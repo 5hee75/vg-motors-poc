@@ -5,15 +5,20 @@ import { Form } from '../components/Form';
 ---
 
 <Layout title="Form">
-	<main slot="main-content" class="m-auto max-w-lg pt-12">
+  <div class="max-w-lg pt-16 px-4">
 		<h1 class="h-10 text-3xl font-bold">Get your instant quote</h1>
 		<p class="prose">
 			Please provide the following information to for an <strong>instant</strong> quote.
       We won't use your information for any additional marketing, we promise.
 		</p>
     <div class="divider" />
-    <Form client:only="preact" />
-	</main>
+
+  </div>
+
+    <div class="max-w-lg">
+      <Form client:load />
+    </div>
+
 </Layout>
 
 

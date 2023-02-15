@@ -3,11 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import StatCard from '../components/StatCard.astro';
 
 ---
-<meta http-equiv="refresh" content="4;url=/quote" />
-<Layout title="Form">
-	<main slot="main-content" class="pt-12">
+<!-- <meta http-equiv="refresh" content="4;url=/quote" /> -->
+<Layout title="Loading">
     <progress class="progress w-screen"></progress>
-    <div class="m-auto max-w-lg">
+    <div class="m-auto max-w-lg p-4">
     <h1 class="h-10 text-3xl font-bold">Just a sec</h1>
 		<p class="prose">
 			Please wait a moment while we generate your quote. You will be redirected automatically once it is ready.
@@ -40,5 +39,4 @@ import StatCard from '../components/StatCard.astro';
       </div>
     </label>
   </div>
-	</main>
 </Layout>

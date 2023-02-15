@@ -4,24 +4,22 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main slot="main-content">
 		<div class="hero min-h-screen" style="background-image: url(/car-road.jpeg);">
 			<div class="hero-overlay bg-opacity-60"></div>
 			<div class="hero-content text-center text-neutral-content">
 				<div class="max-w-2xl">
-					<h1 class="text-5xl font-bold uppercase">Adventure is calling</h1>
-					<div class="h-52" />
-					<p class="pt-32 text-2xl font-semibold">
+					<h1 class="text-4xl font-bold uppercase">Adventure is calling</h1>
+					<div class="h-24 md:h-52" />
+					<p class="pt-32 text-2xl md:font-semibold">
 						But unexpected repair costs can stop you from answering the call of the open road.
 					</p>
-					<p class="pt-4 text-2xl font-semibold">
+					<p class="pt-4 text-2xl md:font-semibold">
 						Don't worry - we've got you covered.
 					</p>
 					<a role="button" href="/form" class="mt-4 btn btn-primary btn-wide text-xl">Instant Quote</a>
 				</div>
 			</div>
 		</div>
-	</main>
 </Layout>
 
 <!-- <style>

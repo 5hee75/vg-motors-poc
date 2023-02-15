@@ -74,9 +74,9 @@ export const Form: FunctionComponent = ({ children }) => {
   );
 
   return (
-    <form onSubmit={onSubmit} onReset={onReset} class="m-auto">
+    <form onSubmit={onSubmit} onReset={onReset} class="m-auto max-w-lg w-full">
       <div class={`swap swap-flip text-9xl w-full ${step === 1 ? 'swap-active' : ''}`}>
-        <div class="swap-off w-screen">
+        <div class="swap-off w-screen px-4">
           <div class="m-auto w-full max-w-md">
             <h2 class="h-10 font-bold text-lg">Contact Info</h2>
           </div>
@@ -100,7 +100,7 @@ export const Form: FunctionComponent = ({ children }) => {
             onChange={onInput('phone')}
           />
         </div>
-        <div class="swap-on w-screen">
+        <div class="swap-on w-screen px-4">
           <div class="m-auto w-full max-w-md">
             <h2 class="h-10 font-bold text-lg">Vehicle Details</h2>
           </div>
