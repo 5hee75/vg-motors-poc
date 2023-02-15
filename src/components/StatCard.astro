@@ -1,0 +1,18 @@
+---
+export interface Props {
+	title: string;
+	img: string;
+}
+
+const { title, img } = Astro.props;
+---
+
+<div class="hero bg-base-200">
+  <div class="hero-content flex-col p-8">
+    <img src={img} class="max-w-sm rounded-lg shadow-2xl" />
+    <div class="p-4">
+      <h1 class="text-3xl font-bold">{title}</h1>
+      <slot name="content" />
+    </div>
+  </div>
+</div>
