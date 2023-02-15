@@ -77,8 +77,8 @@ export const Form: FunctionComponent = ({ children }) => {
     <form onSubmit={onSubmit} onReset={onReset} class="m-auto max-w-lg w-full">
       <div class={`swap swap-flip text-9xl w-full ${step === 1 ? 'swap-active' : ''}`}>
         <div class="swap-off w-screen px-4">
-          <div class="m-auto w-full max-w-md">
-            <h2 class="h-10 font-bold text-lg">Contact Info</h2>
+          <div class="m-auto w-full max-w-md pb-2">
+            <h2 class="font-bold text-lg">Contact Info</h2>
           </div>
           <FormInput
             label="First Name"
@@ -101,8 +101,23 @@ export const Form: FunctionComponent = ({ children }) => {
           />
         </div>
         <div class="swap-on w-screen px-4">
-          <div class="m-auto w-full max-w-md">
-            <h2 class="h-10 font-bold text-lg">Vehicle Details</h2>
+          <div class="m-auto w-full max-w-md flex justify-between items-center pb-2">
+            <h2 class="font-bold text-lg">Vehicle Details</h2>
+            <button class="btn gap-2 btn-ghost" onClick={onReset}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-3 w-3"
+                stroke="currentColor"
+                viewBox="0 0 320 512"
+                fill="currentColor"
+              >
+                <path
+                  stroke-width="2"
+                  d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+                />
+              </svg>
+              back
+            </button>
           </div>
           <FormInput label="VIN" value={values['vin']} onChange={onInput('vin')} />
           <div class="divider m-auto text-lg max-w-md">OR</div>
@@ -135,14 +150,9 @@ export const Form: FunctionComponent = ({ children }) => {
             Next
           </button>
         ) : (
-          <>
-            <a role="button" class="btn bg-primary btn-block" type="submit" href="/loading">
-              Submit
-            </a>
-            <button class="btn btn-block btn-outline mt-2" type="reset">
-              Back
-            </button>
-          </>
+          <a role="button" class="btn bg-primary btn-block" type="submit" href="/loading">
+            Submit
+          </a>
         )}
       </div>
     </form>
