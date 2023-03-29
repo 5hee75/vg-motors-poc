@@ -1,0 +1,53 @@
+---
+export interface Props {
+  title: string;
+  price: number;
+  description: string;
+  bullets?: string[];
+  emphasized?: boolean;
+}
+const { title, price, description, bullets = [], emphasized } = Astro.props;
+---
+
+<div class="card card-bordered border-white border-2 max-w-md m-6 bg-base-300">
+  <div class="card-body text-left">
+    <div class="card-title flex justify-between text-3xl">
+      <span>{title}</span>
+      <span><span class="text-xs">from</span> ${price}</span>
+    </div>
+    <div>{description}</div>
+    <ul class="ml-4 list-disc flex-grow">
+      {bullets.map((bullet) => <li>{bullet}</li>)}
+    </ul>
+    <div>
+      <h1 class="text-xl font-bold py-2">Contract Options</h1>
+      <div class="stats shadow w-full stats-vertical max-w-md md:max-w-xl md:stats-horizontal">
+        <div class="stat place-items-center cursor-pointer">
+          <!-- <div class="stat-title">Contract</div> -->
+          <div class="stat-value">3</div>
+          <div class="stat-desc">years</div>
+        </div>
+        <div class="stat place-items-center cursor-pointer">
+          <!-- <div class="stat-title">Contract</div> -->
+          <div class="stat-value">5</div>
+          <div class="stat-desc">years</div>
+        </div>
+        <div class="stat place-items-center cursor-pointer">
+          <!-- <div class="stat-title">Contract</div> -->
+          <div class="stat-value">7</div>
+          <div class="stat-desc">years</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-actions justify-center">
+      <a role="button" href="/form" class="mt-4 btn btn-primary btn-wide text-base btn-disabled"
+        >Select Option</a
+      >
+    </div>
+    <!-- <ul>
+      {bullets.map((bullet) => (
+        <li>{bullet}</li>
+      ))}
+    </ul> -->
+  </div>
+</div>

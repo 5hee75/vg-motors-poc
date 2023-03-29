@@ -1,0 +1,44 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import PricingCard from '~/components/PricingCard.astro';
+---
+
+<Layout title="Get LoJack">
+  <!-- <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content text-center max-w-xl"> -->
+  <div class="max-w-2xl text-center">
+    <h1 class="text-4xl md:text-5xl font-bold">Choose your package</h1>
+    <p class="py-6">
+      Choose the LoJack option that's right for you - whether you just need one or you'd like to
+      protect your entire family or fleet, we have you covered.
+    </p>
+    <p>No matter what, you'll be getting the same great protection and peace of mind.</p>
+  </div>
+  <div class="flex">
+    <PricingCard
+      title="Individual"
+      price={800}
+      description="Purchase a single LoJack system for best-in-class protection."
+      bullets={[
+        'Fast and FREE installation',
+        'Integrated with law enforcement',
+        '$5,000 recovery guarantee',
+        'Smart alerts',
+        'Geo-fencing',
+        'Realtime tracking',
+      ]}
+    />
+    <PricingCard
+      title="Bundle"
+      price={1500}
+      description="Save $100 or more when you purchase 2 or more LoJack systems."
+      bullets={['Everything included with an individual system', 'Save $$$']}
+    />
+  </div>
+  <div class="m-4">
+    <p>
+      Interested in LoJack to protect your fleet or commercial equipment?
+      <a class="link" href="/form">Contact us for a custom quote</a>.
+    </p>
+  </div>
+</Layout>
