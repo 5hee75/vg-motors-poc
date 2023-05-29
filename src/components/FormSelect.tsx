@@ -33,6 +33,7 @@ export const FormSelect: FunctionComponent<FormSelectProps> = ({
         value={value}
         onChange={onChange}
         class={`select select-bordered w-full max-w-md ${errorCls}`}
+        disabled={disabled}
       >
         <option disabled selected>
           {placeholder || label}

@@ -1,40 +1,53 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import StatCard from '../components/StatCard.astro';
-
+import Layout from "../layouts/Layout.astro";
+import StatCard from "../components/StatCard.astro";
 ---
-<meta http-equiv="refresh" content="6;url=/quote" />
+
+<!-- <meta http-equiv="refresh" content="4;url=/options" /> -->
 <Layout title="Loading">
-    <progress class="progress w-screen"></progress>
-    <div class="m-auto max-w-lg p-4">
-    <h1 class="h-10 text-3xl font-bold">Just a sec</h1>
-		<p class="prose">
-			Please wait a moment while we generate your quote. You will be redirected automatically once it is ready.
-		</p>
-  </div>
+  <progress class="progress w-screen"></progress>
   <div class="m-auto max-w-2xl pt-16 min-h-16">
+    <div class="m-auto max-w-lg mb-16">
+      <h1 class="h-10 text-3xl font-bold">Just a sec</h1>
+      <p class="prose">
+        Please wait a moment while we generate your quote. You will be
+        redirected automatically once it is ready.
+      </p>
+    </div>
+    <!-- </div>
+  <div class=""> -->
     <label class="swap">
       <input type="checkbox" />
       <div class="swap-off">
         <StatCard title="Repairs can cost you" img="/engine-repair.jpeg">
-          <div slot="content"><p class="py-6">
-            Unexpected repairs can often add up to thousands of dollars out of your pocket,
-            and typical warranties can end up costing you even more.
-          </p>
-          <p>
-            We believe your protection should be simple, transparent, and  <strong>affordable</strong>!
-          </p></div>
+          <div slot="content">
+            <p class="py-6">
+              Unexpected repairs can often add up to thousands of dollars out of
+              your pocket, and typical warranties can end up costing you even
+              more.
+            </p>
+            <p>
+              We believe your protection should be simple, transparent, and <strong
+                >affordable</strong
+              >!
+            </p>
+          </div>
         </StatCard>
       </div>
       <div class="swap-on">
         <StatCard title="No solicitation" img="/spam-call.jpeg">
-          <div slot="content"><p class="py-6">
-            Review and accept your quote completely online. We'll never call you unless you ask us to,
-            and we won't share your information with anyone.
-          </p>
-          <p>
-            Want to discuss your quote in more detail? <strong>Just let us know!</strong>
-          </p></div>
+          <div slot="content">
+            <p class="py-6">
+              Review and accept your quote completely online. We'll never call
+              you unless you ask us to, and we won't share your information with
+              anyone.
+            </p>
+            <p>
+              Want to discuss your quote in more detail? <strong
+                >Just let us know!</strong
+              >
+            </p>
+          </div>
         </StatCard>
       </div>
     </label>

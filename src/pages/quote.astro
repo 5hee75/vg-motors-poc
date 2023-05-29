@@ -1,43 +1,46 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import { Form } from '../components/Form';
-import StatCard from '../components/StatCard.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { Form } from "../components/Form";
+import StatCard from "../components/StatCard.astro";
 ---
+
 <Layout title="Form">
-    <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content text-center max-w-xl">
-        <div class="">
-          <h1 class="text-4xl md:text-5xl font-bold">Your quote is ready</h1>
-          <p class="py-6">
-            Congratulations! Your vehicle is eligible for additional coverage.  You can review and accept your quote below.
-          </p>
-          <div class="stats shadow w-full stats-vertical max-w-md md:max-w-xl md:stats-horizontal ">
-  
-            <div class="stat place-items-center">
-              <div class="stat-title">Contract</div>
-              <div class="stat-value">5</div>
-              <div class="stat-desc">years</div>
-            </div>
-            
-            <div class="stat place-items-center">
-              <div class="stat-title">Price</div>
-              <div class="stat-value">$65</div>
-              <div class="stat-desc">per month</div>
-            </div>
-            
-            <div class="stat place-items-center">
-              <div class="stat-title">Deductible</div>
-              <div class="stat-value">$0</div>
-              <div class="stat-desc">for repairs</div>
-            </div>
-            
+  <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content text-center max-w-xl">
+      <div class="">
+        <h1 class="text-4xl md:text-5xl font-bold">Your quote is ready</h1>
+        <p class="py-6">
+          Congratulations! Your vehicle is eligible for additional coverage. You
+          can review and accept your quote below.
+        </p>
+        <div
+          class="stats shadow w-full stats-vertical max-w-md md:max-w-xl md:stats-horizontal"
+        >
+          <div class="stat place-items-center">
+            <div class="stat-title">Contract</div>
+            <div class="stat-value">5</div>
+            <div class="stat-desc">years</div>
           </div>
-          <div class="py-6">
-          <button class="btn btn-primary btn-block max-w-md">Review Quote</button>
+
+          <div class="stat place-items-center">
+            <div class="stat-title">Price</div>
+            <div class="stat-value">$65</div>
+            <div class="stat-desc">per month</div>
+          </div>
+
+          <div class="stat place-items-center">
+            <div class="stat-title">Deductible</div>
+            <div class="stat-value">$0</div>
+            <div class="stat-desc">for repairs</div>
+          </div>
         </div>
+        <div class="py-6">
+          <button class="btn btn-primary btn-block max-w-md"
+            >Review Quote</button
+          >
         </div>
       </div>
     </div>
+  </div>
 </Layout>

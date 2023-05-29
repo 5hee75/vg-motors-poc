@@ -1,0 +1,112 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import PricingCard from "~/components/PricingCard.astro";
+import { OptionSelectCard } from "../components/OptionSelectCard";
+---
+
+<Layout title="Get LoJack">
+  <!-- <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content text-center max-w-xl"> -->
+  <!-- <div class="max-w-2xl text-center">
+    <h1 class="text-4xl md:text-5xl font-bold">Congratulations!</h1>
+    <p class="py-6">
+      Your vehicle is eligible for an extended vehicle service contract. Review
+      your options below and select the coverage that best fits your needs.
+    </p>
+    <p>
+      All of our plans cover you for
+      <span class="font-bold underline">72 months</span> and
+      <span class="font-bold underline">unlimited</span> miles.
+    </p>
+  </div> -->
+  <div class="card card-side bg-base-100 shadow-xl w-[48rem]">
+    <figure>
+      <img
+        class="h-[150px] object-contain object-center w-full rounded-xl m-4"
+        src="/silverado.png"
+        alt="Silverado"
+      />
+    </figure>
+    <div class="card-body max-w-lg">
+      <h1 class="card-title text-4xl">Congratulations!</h1>
+      <p>
+        Your <span class="font-semibold">2023 Chevrolet Silverado</span> is eligible
+        for an extended vehicle service contract!
+      </p>
+
+      <p>
+        Check out your options below and select the coverage that best fits your
+        needs.
+      </p>
+      <!-- <div class="card-actions justify-end">
+        <button class="btn btn-primary">Get Started</button>
+      </div> -->
+    </div>
+  </div>
+  <!-- <p>
+        All of our plans cover you up to and
+        <span class="font-bold underline">unlimited</span> miles!
+      </p> -->
+  <div class="text-lg">
+    <p>
+      All of our plans cover you for
+      <span class="font-bold underline">72 months</span> and
+      <span class="font-bold underline">unlimited</span> miles.
+    </p>
+  </div>
+
+  <OptionSelectCard
+    client:load
+    title="Vehicle Service Contract"
+    description="Protect yourself from unexpected repair costs"
+    price={1797}
+  />
+  <OptionSelectCard
+    client:load
+    title="GAP Insurance"
+    description="Cover the difference between your vehicle's value and what you owe"
+    price={542}
+  />
+  <OptionSelectCard
+    client:load
+    title="Combo (3 in 1)"
+    description="Covers windshields, key fobs, and paintless dent repair"
+    price={584}
+  />
+  <OptionSelectCard
+    client:load
+    title="LoJack™ Vehicle Recovery System"
+    description="Protect against theft and get smart vehicle alerts"
+    price={800}
+  />
+
+  <div class="btn btn-block max-w-[48rem] btn-primary">Continue</div>
+
+  <!-- <div class="flex">
+    <PricingCard
+      title="Individual"
+      price={800}
+      description="Purchase a single LoJack system for best-in-class protection."
+      bullets={[
+        "Fast and FREE installation",
+        "Integrated with law enforcement",
+        "$5,000 recovery guarantee",
+        "Smart alerts",
+        "Geo-fencing",
+        "Realtime tracking",
+      ]}
+    />
+    <PricingCard
+      title="Bundle"
+      price={1500}
+      description="Save $100 or more when you purchase 2 or more LoJack systems."
+      bullets={["Everything included with an individual system", "Save $$$"]}
+    />
+  </div>
+  <div class="m-4">
+    <p>
+      Interested in LoJack to protect your fleet or commercial equipment?
+      <a class="link" href="/form">Contact us for a custom quote</a>.
+    </p>
+  </div> -->
+</Layout>

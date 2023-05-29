@@ -10,27 +10,38 @@ interface I_FormValues {
   phone: string;
   vin: string;
   year: string;
-  make: string;
+  make: keyof typeof makeModels;
   model: string;
 }
 
 const years = [
+  { value: '2023' },
+  { value: '2022' },
   { value: '2021' },
   { value: '2020' },
   { value: '2019' },
   { value: '2018' },
   { value: '2017' },
 ];
-const makes = [
-  { value: 'Ford' },
+const makes: { value: keyof typeof makeModels }[] = [
   { value: 'Chevrolet' },
+  { value: 'Ford' },
   { value: 'Toyota' },
   { value: 'Honda' },
   { value: 'Nissan' },
 ];
+
+const makeModels = {
+  '': [{ value: '' }],
+  Chevrolet: [{ value: 'Silverado' }],
+  Ford: [{ value: 'F-150' }],
+  Toyota: [{ value: 'Tacoma' }],
+  Honda: [{ value: 'Civic' }],
+  Nissan: [{ value: 'Altima' }],
+};
 const models = [
-  { value: 'F-150' },
   { value: 'Silverado' },
+  { value: 'F-150' },
   { value: 'Tacoma' },
   { value: 'Civic' },
   { value: 'Altima' },
@@ -80,25 +91,10 @@ export const Form: FunctionComponent = ({ children }) => {
           <div class="m-auto w-full max-w-md pb-2">
             <h2 class="font-bold text-lg">Contact Info</h2>
           </div>
-          <FormInput
-            label="First Name"
-            value={values['firstName']}
-            onChange={onInput('firstName')}
-          />
+          <FormInput label="First Name" value={values['firstName']} onChange={onInput('firstName')} />
           <FormInput label="Last Name" value={values['lastName']} onChange={onInput('lastName')} />
-          <FormInput
-            type="email"
-            label="Email"
-            value={values['email']}
-            onChange={onInput('email')}
-          />
-          <FormInput
-            optional
-            type="tel"
-            label="Phone"
-            value={values['phone']}
-            onChange={onInput('phone')}
-          />
+          <FormInput type="email" label="Email" value={values['email']} onChange={onInput('email')} />
+          <FormInput optional type="tel" label="Phone" value={values['phone']} onChange={onInput('phone')} />
         </div>
         <div class="swap-on w-screen px-4">
           <div class="m-auto w-full max-w-md flex justify-between items-center pb-2">
@@ -109,8 +105,7 @@ export const Form: FunctionComponent = ({ children }) => {
                 class="h-3 w-3"
                 stroke="currentColor"
                 viewBox="0 0 320 512"
-                fill="currentColor"
-              >
+                fill="currentColor">
                 <path
                   stroke-width="2"
                   d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
@@ -121,12 +116,7 @@ export const Form: FunctionComponent = ({ children }) => {
           </div>
           <FormInput label="VIN" value={values['vin']} onChange={onInput('vin')} />
           <div class="divider m-auto text-lg max-w-md">OR</div>
-          <FormSelect
-            label="Year"
-            value={values['year']}
-            options={years}
-            onChange={onInput('year')}
-          />
+          <FormSelect label="Year" value={values['year']} options={years} onChange={onInput('year')} />
           <FormSelect
             label="Make"
             value={values['make']}
@@ -137,7 +127,7 @@ export const Form: FunctionComponent = ({ children }) => {
           <FormSelect
             label="Model"
             value={values['model']}
-            options={models}
+            options={values['make'] ? makeModels[values['make']] : models}
             onChange={onInput('model')}
             disabled={!values['make']}
           />
@@ -150,7 +140,7 @@ export const Form: FunctionComponent = ({ children }) => {
             Next
           </button>
         ) : (
-          <a role="button" class="btn bg-primary btn-block" type="submit" href="/loading">
+          <a role="button" class="btn bg-primary btn-block" type="submit" href="/options">
             Submit
           </a>
         )}
